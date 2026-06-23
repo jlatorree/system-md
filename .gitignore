@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+
+# Obsidian (si abres la carpeta como vault)
+.obsidian/
+
+# Temporales
+*.tmp
+*~
