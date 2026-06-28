@@ -16,7 +16,7 @@ proyecto, con sus propias fuentes y su propio mapa.
 
 - **Fuentes canónicas** (carpetas con nombre de tema): un solo archivo es la
   *verdad* de cada tema. Nada se duplica.
-- **Derivados** (carpetas CORE con prefijo `_`, como `_keynote/`): presentaciones,
+- **Derivados** (carpetas CORE con prefijo `_`, como `_entregables/`): presentaciones,
   informes y resúmenes que se *generan a partir de* las fuentes y las citan.
 - **`manifest.md`**: el mapa en la raíz. De un vistazo se ve qué hay, qué está
   vigente y qué deriva de qué.

@@ -1,7 +1,7 @@
 # Clasificación — cómo decidir qué es cada archivo (modo Adoptar)
 
 Esta es tu guía para proponer un destino por archivo. Son **señales, no reglas
-rígidas**: usa criterio y, en la duda, propón tu mejor hipótesis (el usuario
+rígidas**: usa criterio y, en la duda, propón tu mejor hipótesis y márcala "(confianza baja)" en el plan (el usuario
 corrige el plan antes de que se ejecute). El principio rector: **un archivo es
 *canónico* si es una fuente de verdad sobre un tema; es *derivado* si se generó a
 partir de otra cosa para presentarla o resumirla.**
@@ -24,7 +24,7 @@ largo de notas crudas es canónico aunque esté desordenado.
 | --- | --- | --- |
 | Visión, propósito, misión, conceptos clave, "filosofía", glosario del proyecto | Contexto | `_context/` |
 | `.md` con sustancia sobre **un tema** (investigación, segmentos, propuesta, notas de trabajo, análisis) | Canónico | carpeta **modular** con nombre del tema |
-| `.pptx` / `.html` / `.docx` / PDF generado por ti / resumen / one-pager / pitch | Derivado | CORE (`_keynote/` para presentaciones; otra CORE según el tipo) |
+| `.pptx` / `.html` / `.docx` / PDF generado por ti / resumen / one-pager / pitch | Derivado | `_entregables/` en subcarpeta por tipo (`keynotes/`, `informes/`, `prototipos/`…) |
 | Tokens, paleta, tipografía, guías o componentes visuales | Design system | `_design-system/` |
 | Bibliografía, papers de terceros, PDFs externos, enlaces fuente, capturas de referencia | Referencia | `_referencias/` |
 | Bitácora/log de decisiones del proyecto | Decisiones | `_decisiones/decisiones.md` |
@@ -59,7 +59,7 @@ Una carpeta modular agrupa **un tema**, con nombre descriptivo y sin prefijo
 - **`_historico/` nunca se asigna automáticamente.** Solo se congela ahí una
   versión cuando el usuario lo ordena explícitamente, porque depende de un evento
   externo (se presentó a un comité, a dirección) que solo él conoce.
-- **`_por-clasificar/` es el último recurso.** Agota todas las opciones antes de
+- **`_por-clasificar/` es el último recurso (la ambigüedad de categoría NO cuenta: para eso, ubícalo en tu mejor hipótesis y márcalo "confianza baja").** Agota todas las opciones antes de
   mandar algo ahí. Cada archivo que caiga ahí lleva una nota de por qué y **se le
   reporta al usuario**. La meta es que la carpeta quede vacía.
 - **Ruido se ignora, no se borra.** No elimines `.DS_Store` ni nada: el sistema

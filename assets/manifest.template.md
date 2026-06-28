@@ -29,7 +29,7 @@ Este archivo es el **índice vivo** del proyecto: la vista **global** de qué es
 | Carpeta          | Contenido                                                            |
 | ---------------- | ------------------------------------------------------------------- |
 | `_context/`      | Contexto canónico del proyecto (visión, propósito, conceptos clave) |
-| `_keynote/`      | Esquemas y archivos de presentación                                 |
+| `_entregables/`      | Tus salidas, por tipo: `keynotes/`, `informes/`, `prototipos/`…                                 |
 | `_design-system/`| Tokens, componentes, guías visuales del proyecto                    |
 | `_referencias/`  | Bibliografía y fuentes                                              |
 | `_historico/`    | Versiones congeladas (canónicos llevados a instancias externas)     |

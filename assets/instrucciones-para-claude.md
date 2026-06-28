@@ -65,7 +65,7 @@ consignas:
 
 - **Derivar.** Cuando el usuario pida un derivado a partir de canónicos
   ("con X.md y Y.md genera una presentación"), lee primero esos canónicos como
-  fuente, genera el derivado en la carpeta CORE que corresponda, ponle la cita
+  fuente, genera el derivado en `_entregables/`, en la subcarpeta de su tipo (`keynotes/`, `informes/`, `prototipos/`…), ponle la cita
   "Basado en..." y registra la fila en la tabla de derivados del manifest.
 
 - **Lint (cuando el usuario lo pida).** Haz un health-check del proyecto y
@@ -81,7 +81,7 @@ consignas:
   derivado que dependa de él.
 - No pre-crees carpetas vacías. Crea cada carpeta (CORE o modular) solo cuando
   llegue el primer archivo que va en ella.
-- Carpetas CORE base (piso mínimo, no renombrar): `_context/`, `_keynote/`,
+- Carpetas CORE base (piso mínimo, no renombrar): `_context/`, `_entregables/`,
   `_design-system/`, `_referencias/`, `_historico/`, `_decisiones/`. Las CORE
   son transversales (sirven a todo el proyecto, no a un tema).
 - Las CORE son extensibles: si aparece una necesidad transversal que no encaja

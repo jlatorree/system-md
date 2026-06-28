@@ -24,11 +24,11 @@ El sistema tiene una sola dirección de flujo:
 
 1. Conversas con el agente y algo cristaliza (un segmento, una propuesta de valor, un hallazgo).
 2. Eso se guarda como **canónico** en una carpeta MODULAR (`segmentos/`, `propuesta-valor/`). Tus módulos *son* tus fuentes de conocimiento, y nacen de las conversaciones.
-3. Cuando pides un **derivado**, combinas canónicos: *"con `segmentos.md` y `propuesta-de-valor.md` genera una presentación para stakeholders"*. El derivado se guarda en una carpeta **CORE** (`_keynote/`) y cita sus fuentes.
+3. Cuando pides un **derivado**, combinas canónicos: *"con `segmentos.md` y `propuesta-de-valor.md` genera una presentación para stakeholders"*. El derivado se guarda en **`_entregables/`** (por tipo: `keynotes/`, `informes/`…) y cita sus fuentes.
 
 Las carpetas:
 
-- **CORE** (fijas, todo proyecto las tiene): `_context/`, `_keynote/`, `_design-system/`, `_referencias/`, `_historico/`. Aquí viven los **derivados**.
+- **CORE** (con prefijo `_`, nacen cuando llega su primer archivo): `_context/`, `_entregables/` (tus salidas, por tipo: `keynotes/`, `informes/`, `prototipos/`…), `_design-system/`, `_referencias/`, `_decisiones/`, `_historico/`. Aquí viven los **derivados** y el material de apoyo.
 - **MODULARES** (crecen con tus conversaciones): una por tema, nombre descriptivo. Aquí viven los **canónicos** (tus fuentes).
 
 Cada canónico cierra con una sección `## Conexiones` en wikilinks (`[[...]]`) que dice de qué depende y qué alimenta. No es para un grafo bonito: es **navegación para el agente** — al abrir un archivo ve qué más leer — y la base del *lint*. Como ya usas Obsidian, el grafo aparece gratis; pero los `[[...]]` son texto plano, así que el sistema no queda atado a ningún plugin.

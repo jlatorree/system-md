@@ -74,7 +74,7 @@ Garantía central: **no borras nada y no mueves nada hasta que el usuario aprueb
    modifiques.
 3. **Clasifica (propuesta).** Para cada archivo decide un rol y un destino usando
    las señales de `references/clasificacion.md` (léelo ahora). Esfuérzate por
-   ubicar todo dentro de la estructura; clasificar mal es preferible a rendirse,
+   ubicar todo dentro de la estructura; clasificar mal es preferible a rendirse (marca "(confianza baja)" tus hipótesis dudosas para que destaquen en el plan),
    porque el usuario corrige el plan antes de que se ejecute.
    - **`_historico/` nunca se asigna automáticamente.** Solo va ahí lo que el
      usuario ordene congelar explícitamente. Al adoptar, no puedes saber qué
