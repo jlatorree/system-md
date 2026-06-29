@@ -15,11 +15,12 @@ proyecto, con sus propias fuentes y su propio mapa.
 ## Cómo queda organizado el proyecto
 
 - **Nodes** (carpetas con nombre de tema): un solo archivo es la
-  *verdad* de cada tema. Nada se duplica.
+  *verdad* de cada tema. Cada node vale por lo que conecta, no solo por lo
+  que dice. Nada se duplica.
 - **Derivados** (carpetas CORE con prefijo `_`, como `_entregables/`): presentaciones,
   informes y resúmenes que se *generan a partir de* las fuentes y las citan.
-- **`hub.md`**: el mapa en la raíz. De un vistazo se ve qué hay, qué está
-  vigente y qué deriva de qué.
+- **`hub.md`**: lo que conecta todo, en la raíz. De un vistazo se ve qué
+  hay, qué está vigente y qué deriva de qué.
 
 ## El trato (importante decírselo)
 

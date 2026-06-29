@@ -2,7 +2,7 @@
 
 Skill para organizar y mantener un proyecto bajo el método **Many Brains**: en vez
 de acumular archivos sueltos, cultivas un "cerebro" por proyecto con nodes,
-derivados que citan su fuente, y un `hub.md` que actúa como mapa.
+derivados que citan su fuente, y un `hub.md` que lo conecta todo.
 Resuelve el problema de "voy generando documentos y se vuelve difícil mapear la
 información".
 

@@ -24,11 +24,12 @@ curaduría y las decisiones son del usuario. **Nunca borras nada.**
 El sistema se apoya en tres ideas que debes conocer antes de tocar nada:
 
 - **Nodes**: archivos `.md` que son la *única fuente de verdad* de un tema.
+  Un node vale por lo que conecta con los demás, no solo por lo que contiene.
   Viven en carpetas **modulares** (nombre del tema, sin prefijo).
 - **Derivados**: presentaciones, informes, resúmenes generados *a partir de*
   nodes. Viven en carpetas **CORE** (con prefijo `_`) y citan su fuente.
-- **Hub**: `hub.md` en la raíz, el índice vivo de qué hay y qué deriva
-  de qué.
+- **Hub**: `hub.md` en la raíz: lo que conecta todo. De un vistazo, qué hay
+  y qué deriva de qué.
 
 Archivos que trae este skill (léelos cuando los necesites, no todos de golpe):
 
