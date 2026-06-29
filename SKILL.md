@@ -1,21 +1,22 @@
 ---
 name: many-brains
 description: >-
-  Organiza y mantiene un proyecto bajo el sistema Many Brains: un hub vivo,
-  carpetas CORE/modulares, nodes y derivados que citan su fuente.
-  Detecta el estado del proyecto y actúa en consecuencia: siembra uno vacío,
-  ADOPTA uno que ya tiene contenido (lo lee todo, propone una estructura en árbol
-  y reordena solo con la aprobación del usuario, sin borrar nada), o reconcilia
-  uno que ya usa Many Brains. Úsalo siempre que el usuario quiera ordenar,
-  estructurar, migrar, limpiar o "aplicar Many Brains" a un proyecto —nuevo o ya
-  avanzado— incluso si no nombra el sistema explícitamente pero pide poner orden
-  en sus archivos, notas, carpetas o documentos.
+  Organiza y mantiene un proyecto bajo el sistema Many Brains: un hub vivo
+  (`_hub.md`), nodes planos en `_nodes/` que son la única fuente de verdad de
+  cada tema, y outputs que citan su fuente. Detecta el estado del proyecto y
+  actúa en consecuencia: siembra uno vacío, ADOPTA uno que ya tiene contenido
+  (lo lee todo, propone una estructura en árbol y reordena solo con la aprobación
+  del usuario, sin borrar nada), o reconcilia uno que ya usa Many Brains. Úsalo
+  siempre que el usuario quiera ordenar, estructurar, migrar, limpiar o "aplicar
+  Many Brains" a un proyecto —nuevo o ya avanzado— incluso si no nombra el sistema
+  explícitamente pero pide poner orden en sus archivos, notas, carpetas o
+  documentos.
 ---
 # Many Brains
 
 Este skill instala y mantiene el método **Many Brains** en un proyecto: en vez de
-acumular archivos sueltos, se cultiva un "cerebro" por proyecto con nodes,
-derivados que citan su fuente, y un `hub.md` que actúa como mapa.
+acumular archivos sueltos, se cultiva un "cerebro" por proyecto con nodes planos,
+outputs que citan su fuente, y un `_hub.md` que actúa como mapa.
 Tu rol al usarlo es el de **bibliotecario, no autor**: ordenas y propones, pero la
 curaduría y las decisiones son del usuario. **Nunca borras nada.**
 
@@ -23,21 +24,29 @@ curaduría y las decisiones son del usuario. **Nunca borras nada.**
 
 El sistema se apoya en tres ideas que debes conocer antes de tocar nada:
 
-- **Nodes**: archivos `.md` que son la *única fuente de verdad* de un tema.
-  Un node vale por lo que conecta con los demás, no solo por lo que contiene.
-  Viven en carpetas **modulares** (nombre del tema, sin prefijo).
-- **Derivados**: presentaciones, informes, resúmenes generados *a partir de*
-  nodes. Viven en carpetas **CORE** (con prefijo `_`) y citan su fuente.
-- **Hub**: `hub.md` en la raíz: lo que conecta todo. De un vistazo, qué hay
-  y qué deriva de qué.
+- **Node**: archivo `.md` que es la *única fuente de verdad* de un tema. Vive en
+  `_nodes/` (PLANO, sin subcarpetas por tema), con nombre en kebab-case
+  (`arquitectura-de-pagos.md`). Un node vale por lo que conecta con los demás, no
+  solo por lo que contiene: por eso cierra con `## Conexiones` (`[[...]]`,
+  recíprocas) y cita por afirmación lo que viene de otra fuente.
+- **Output** (= entregable): presentaciones, informes, resúmenes generados *a
+  partir de* nodes. Viven en `_outputs/` y citan su fuente ("Basado en
+  `node.md`…" más citas por afirmación). La operación de crearlos se llama
+  *derivar*.
+- **Hub**: `_hub.md` en la raíz (con prefijo `_`): lo que conecta todo. De un
+  vistazo, qué nodes hay, cuándo se actualizaron y qué output deriva de cuáles.
+
+Como `_nodes/` es plano, la navegación no la dan las carpetas: la dan el `_hub.md`
+y la capa de `## Conexiones` con `[[...]]` de cada node. Por eso esa capa es
+obligatoria.
 
 Archivos que trae este skill (léelos cuando los necesites, no todos de golpe):
 
-- `references/tutorial.md` — el resumen del sistema que le explicas al usuario
+- `references/tutorial.md` — el resumen del sistema que le explicas al usuario.
   **Léelo siempre antes de proponer u ordenar.**
 - `references/clasificacion.md` — las señales para decidir qué es cada archivo.
   Léelo al entrar en modo Adoptar.
-- `assets/hub.template.md` — el esqueleto del `hub.md` a crear.
+- `assets/hub.template.md` — el esqueleto del `_hub.md` a crear.
 - `assets/instrucciones-para-claude.md` — las reglas permanentes que el proyecto necesita para
   mantenerse vivo. Es lo que instalas en el handoff.
 
@@ -47,7 +56,7 @@ Mira la raíz del proyecto e identifica en cuál de los tres estados estás:
 
 | Estado | Modo | Ir a |
 | --- | --- | --- |
-| Hay un `hub.md` estructurado en la raíz | **Reconciliar** | sección "Modo Reconciliar" |
+| Hay un `_hub.md` estructurado en la raíz | **Reconciliar** | sección "Modo Reconciliar" |
 | Casi sin contenido (solo config/ruido) | **Sembrar** | sección "Modo Sembrar" |
 | Hay contenido real, pero no Many Brains | **Adoptar** | sección "Modo Adoptar" |
 
@@ -77,8 +86,8 @@ Garantía central: **no borras nada y no mueves nada hasta que el usuario aprueb
    las señales de `references/clasificacion.md` (léelo ahora). Esfuérzate por
    ubicar todo dentro de la estructura; clasificar mal es preferible a rendirse (marca "(confianza baja)" tus hipótesis dudosas para que destaquen en el plan),
    porque el usuario corrige el plan antes de que se ejecute.
-   - **`_historico/` nunca se asigna automáticamente.** Solo va ahí lo que el
-     usuario ordene congelar explícitamente. Al adoptar, no puedes saber qué
+   - **`_outputs/_historico/` nunca se asigna automáticamente.** Solo va ahí lo que
+     el usuario ordene congelar explícitamente. Al adoptar, no puedes saber qué
      versión se llevó a una instancia externa: eso es un evento del mundo real que
      solo el usuario conoce.
 4. **Presenta el PLAN como árbol.** Muestra la estructura propuesta en el esquema
@@ -93,7 +102,7 @@ Garantía central: **no borras nada y no mueves nada hasta que el usuario aprueb
    quede vacía: no es un buzón de descarte, es la excepción.
 6. **Ejecuta (solo con OK).** Mueve los archivos a su destino (mover, no copiar,
    para no dejar duplicados). Crea las carpetas a medida que las necesitas (no
-   pre-crees vacías). Crea `hub.md` a partir de `assets/hub.template.md`
+   pre-crees vacías). Crea `_hub.md` a partir de `assets/hub.template.md`
    y llena sus tablas con lo recién ordenado.
 7. **Handoff.** Ve a la sección "Handoff del mantenimiento".
 
@@ -103,10 +112,11 @@ Garantía central: **no borras nada y no mueves nada hasta que el usuario aprueb
 > excepción y díselo.
 
 > **La adopción solo reubica, no modifica contenido.** Al mover un archivo a su
-> carpeta no cambias lo que hay dentro. Los nodes llevan `## Conexiones` y los
-> derivados una cita "Basado en…", pero **no se las agregues durante la
-> adopción**: mover no es momento de editar. Propón añadirlas como un paso aparte y
-> opcional, *después* de ordenar, archivo por archivo y con el OK del usuario.
+> carpeta no cambias lo que hay dentro. Los nodes llevan `## Conexiones`
+> (recíprocas) y citas por afirmación, y los outputs una cita "Basado en…", pero
+> **no se las agregues durante la adopción**: mover no es momento de editar.
+> Propón añadirlas como un paso aparte y opcional, *después* de ordenar, archivo
+> por archivo y con el OK del usuario.
 
 ## Modo Sembrar
 
@@ -115,27 +125,30 @@ Para un proyecto vacío o casi vacío:
 1. **Explica el sistema** (tutorial breve, como en la sección anterior).
 2. Pregunta: "¿Hay alguna fuente, documento o información que deba cargar como
    contexto en `_context/` antes de empezar?".
-3. Crea `hub.md` desde `assets/hub.template.md` (reemplaza `[NOMBRE]`).
+3. Crea `_hub.md` desde `assets/hub.template.md` (reemplaza `[NOMBRE]`).
 4. No pre-crees carpetas: nacen cuando llega su primer archivo.
 5. **Handoff** del mantenimiento.
 
 ## Modo Reconciliar
 
-El proyecto ya usa Many Brains (hay `hub.md`). No re-siembres.
+El proyecto ya usa Many Brains (hay un `_hub.md` estructurado en la raíz). No
+re-siembres.
 
-- Compara el `hub.md` con la realidad de las carpetas y corrige desfases
+- Compara el `_hub.md` con la realidad de las carpetas y corrige desfases
   (filas que faltan, rutas movidas, fechas). Avisa qué reconciliaste.
-- Corre el **lint** si el usuario lo pide: nodes sin sección `## Conexiones`,
-  wikilinks `[[...]]` rotos, derivados marcados `requiere refresh` hace tiempo,
+- Corre el **lint** si el usuario lo pide (health-check por razonamiento, no
+  script): nodes sin sección `## Conexiones`, wikilinks `[[...]]` rotos,
+  **backlinks no recíprocos** (A enlaza a B pero B no enlaza a A), **afirmaciones
+  sustantivas sin cita**, outputs marcados `requiere refresh` hace tiempo,
   contradicciones entre nodes, conceptos repetidos que merecerían su propio
   node. **Propón** correcciones; no las apliques sin confirmar.
 
 ## Handoff del mantenimiento (cierre de Sembrar y Adoptar)
 
-El objetivo es dejar el proyecto **autosostenido**: que el `hub.md` se
+El objetivo es dejar el proyecto **autosostenido**: que el `_hub.md` se
 mantenga vivo en cada sesión futura sin que el usuario lo pida. El mecanismo es la
 regla permanente de `assets/instrucciones-para-claude.md`, y **va siempre a nivel de proyecto**
-(no a las instrucciones globales — esa regla habla de `hub.md` y carpetas que
+(no a las instrucciones globales — esa regla habla de `_hub.md` y carpetas que
 otros proyectos no tienen).
 
 - **En Cowork:** no puedes escribir el panel de instrucciones (es UI de la app).
@@ -151,9 +164,9 @@ Si no sabes en qué entorno estás, pregúntalo antes de hacer el handoff.
 - **Nunca borres.** Ni siquiera el ruido: lo ignoras, no lo eliminas.
 - **Propón, decide el humano.** Nada se mueve sin OK. Eres bibliotecario, no autor.
 - **Explica antes de actuar** (siempre, antes de proponer u ordenar).
-- **Adoptar reubica, no modifica contenido.** Añadir Conexiones o citas a archivos
-  existentes es un paso aparte, propuesto y opcional.
+- **Adoptar reubica, no modifica contenido.** Añadir Conexiones (recíprocas) o
+  citas por afirmación a archivos existentes es un paso aparte, propuesto y opcional.
 - **`_por-clasificar/` es último recurso, no buzón.** Reporta lo que cae ahí.
-- **`_historico/` solo por orden explícita del usuario.**
-- **Idempotente.** Si te corren de nuevo, detectas el `hub.md` y reconcilias;
+- **`_outputs/_historico/` solo por orden explícita del usuario.**
+- **Idempotente.** Si te corren de nuevo, detectas el `_hub.md` y reconcilias;
   no re-siembras ni duplicas.

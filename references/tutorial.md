@@ -14,13 +14,14 @@ proyecto, con sus propias fuentes y su propio mapa.
 
 ## Cómo queda organizado el proyecto
 
-- **Nodes** (carpetas con nombre de tema): un solo archivo es la
-  *verdad* de cada tema. Cada node vale por lo que conecta, no solo por lo
-  que dice. Nada se duplica.
-- **Derivados** (carpetas CORE con prefijo `_`, como `_entregables/`): presentaciones,
-  informes y resúmenes que se *generan a partir de* las fuentes y las citan.
-- **`hub.md`**: lo que conecta todo, en la raíz. De un vistazo se ve qué
-  hay, qué está vigente y qué deriva de qué.
+- **Nodes** (un archivo por tema en `_nodes/`, plano, sin subcarpetas): un solo
+  archivo es la *verdad* de cada tema. Cada node vale por lo que conecta, no solo
+  por lo que dice; como no hay carpetas por tema, la navegación la dan el mapa y
+  los wikilinks (`[[...]]`) de cada node. Nada se duplica.
+- **Outputs** (entregables en `_outputs/`): presentaciones, informes y resúmenes
+  que se *generan a partir de* los nodes y los citan (qué node y de qué versión).
+- **`_hub.md`**: el mapa que conecta todo, en la raíz. De un vistazo se ve qué
+  hay, qué está vigente y qué output deriva de cuáles.
 
 ## El trato (importante decírselo)
 
@@ -33,5 +34,6 @@ proyecto, con sus propias fuentes y su propio mapa.
 ## Frase de cierre que puedes usar
 
 "Voy a leer lo que ya tienes y te voy a proponer una estructura: tus fuentes por
-tema, los documentos derivados aparte, y un mapa (`hub.md`) que conecta todo.
-No borro ni muevo nada sin tu OK. ¿Le damos una mirada?"
+tema como nodes en `_nodes/`, los entregables aparte en `_outputs/` citando su
+fuente, y un mapa (`_hub.md`) que conecta todo a través de las conexiones entre
+nodes. No borro ni muevo nada sin tu OK. ¿Le damos una mirada?"
