@@ -10,6 +10,25 @@ A diferencia de un template (que solo sirve para arrancar un proyecto vacío), e
 skill también **adopta un proyecto que ya viene avanzando**: lee lo que existe,
 propone una estructura y la ordena —sin borrar nada y solo con tu aprobación.
 
+## Instalación
+
+**Claude Code — como plugin** (recomendado: se auto-actualiza):
+
+```sh
+/plugin marketplace add jlatorree/many-brains
+/plugin install many-brains@jlatorree
+```
+
+**Claude Code — como skill personal** (clonando el repo, sin marketplace):
+
+```sh
+git clone https://github.com/jlatorree/many-brains.git ~/.claude/skills/many-brains
+```
+
+**Claude Cowork:** no se instala desde GitHub. Usa la edición autocontenida de un
+solo archivo (`many-brains-cowork.md`) y pégala en Settings del proyecto →
+Instructions (ver "Cómo se instala el mantenimiento" más abajo).
+
 ## Los tres modos
 
 El skill detecta el estado del proyecto y actúa según corresponda:
