@@ -12,27 +12,22 @@ propone una estructura y la ordena —sin borrar nada y solo con tu aprobación.
 
 ## Instalación
 
-> **Nota:** este repo es un **plugin de Claude Code** y está pensado para usarse en
-> Code. Claude Cowork no admite plugins: los usuarios de Cowork usan la **edición
-> derivada de un solo archivo** (ver abajo), pegándola en las Instructions del proyecto.
+> **Nota:** Many Brains es un **skill** (instrucciones en .md), no un plugin de
+> marketplace. En Claude Code se copia a tu carpeta de skills; en Cowork se pega la
+> edición de un solo archivo en las Instructions del proyecto.
 
-**Claude Code — como plugin** (recomendado: se auto-actualiza):
-
-```sh
-/plugin marketplace add jlatorree/many-brains
-/plugin install many-brains@jlatorree
-```
-
-**Claude Code — probar en local sin instalar** (desarrollo):
+**Claude Code** — clona (o descarga) el repo dentro de tu carpeta de skills:
 
 ```sh
-git clone https://github.com/jlatorree/many-brains.git
-claude --plugin-dir ./many-brains   # recarga con /reload-plugins
+git clone https://github.com/jlatorree/many-brains.git ~/.claude/skills/many-brains
 ```
 
-**Claude Cowork:** no se instala desde GitHub (Cowork no admite plugins). Usa la
-edición derivada de un solo archivo
-[`cowork/many-brains-cowork.md`](cowork/many-brains-cowork.md) y pégala en Settings
+Reinicia Claude Code y el skill `many-brains` queda disponible (invócalo con
+`/many-brains` o deja que se active solo). Para actualizarlo:
+`git -C ~/.claude/skills/many-brains pull`.
+
+**Claude Cowork** — copia el contenido de
+[`cowork/many-brains-cowork.md`](cowork/many-brains-cowork.md) y pégalo en Settings
 del proyecto → Instructions (ver "Cómo se instala el mantenimiento" más abajo).
 
 ## Los tres modos
@@ -49,17 +44,17 @@ El skill detecta el estado del proyecto y actúa según corresponda:
 
 | Archivo | Rol |
 | ------- | --- |
-| `skills/many-brains/SKILL.md` | El skill. Detección de modo, flujo plan-first y handoff. |
-| `skills/many-brains/references/tutorial.md` | El resumen del sistema que el agente le explica al usuario antes de ordenar. |
-| `skills/many-brains/references/clasificacion.md` | Las señales para decidir qué es cada archivo. |
-| `skills/many-brains/assets/hub.template.md` | Esqueleto del `_hub.md` que se siembra en el proyecto. |
-| `skills/many-brains/assets/instrucciones-para-claude.md` | La regla permanente que mantiene el sistema vivo (se instala en el handoff). |
+| `SKILL.md` | El skill. Detección de modo, flujo plan-first y handoff. |
+| `references/tutorial.md` | El resumen del sistema que el agente le explica al usuario antes de ordenar. |
+| `references/clasificacion.md` | Las señales para decidir qué es cada archivo. |
+| `assets/hub.template.md` | Esqueleto del `_hub.md` que se siembra en el proyecto. |
+| `assets/instrucciones-para-claude.md` | La regla permanente que mantiene el sistema vivo (se instala en el handoff). |
 | `docs/guia-de-uso.md` | La guía conceptual completa del método. |
 
 ## Cómo se instala el mantenimiento (handoff)
 
 Al terminar de ordenar, el skill deja el proyecto autosostenido instalando la regla
-de `skills/many-brains/assets/instrucciones-para-claude.md` **a nivel de proyecto** (no global):
+de `assets/instrucciones-para-claude.md` **a nivel de proyecto** (no global):
 
 - **En Claude Code:** crea o actualiza el `CLAUDE.md` del proyecto.
 - **En Claude Cowork:** te entrega el texto para que lo pegues en Settings del
