@@ -66,4 +66,4 @@ Todo lo del proyecto vive bajo carpetas con prefijo `_`. En la raíz, además, d
 
 ## Cómo se mantiene este hub
 
-El agente lo mantiene en cada sesión gracias al schema en `CLAUDE.md` (Code) o en las Instructions del proyecto (Cowork): actualiza fechas/versiones al tocar nodes, marca como `requiere refresh` los outputs que dependen de un node modificado, agrega filas nuevas al crear/mover/renombrar, y actualiza la fecha de cabecera con cada cambio. Ver `docs/guia-de-uso.md` para el detalle.
+El agente lo mantiene en cada sesión gracias al schema en `CLAUDE.md` (Code) o en las Instructions del proyecto (Cowork): actualiza fechas/versiones al tocar nodes, marca como `requiere refresh` los outputs que dependen de un node modificado, agrega filas nuevas al crear/mover/renombrar, y actualiza la fecha de cabecera con cada cambio.

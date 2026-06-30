@@ -1,16 +1,12 @@
 ---
 name: many-brains
 description: >-
-  Organiza y mantiene un proyecto bajo el sistema Many Brains: un hub vivo
-  (`_hub.md`), nodes planos en `_nodes/` que son la única fuente de verdad de
-  cada tema, y outputs que citan su fuente. Detecta el estado del proyecto y
-  actúa en consecuencia: siembra uno vacío, ADOPTA uno que ya tiene contenido
-  (lo lee todo, propone una estructura en árbol y reordena solo con la aprobación
-  del usuario, sin borrar nada), o reconcilia uno que ya usa Many Brains. Úsalo
-  siempre que el usuario quiera ordenar, estructurar, migrar, limpiar o "aplicar
-  Many Brains" a un proyecto —nuevo o ya avanzado— incluso si no nombra el sistema
-  explícitamente pero pide poner orden en sus archivos, notas, carpetas o
-  documentos.
+  Organiza y mantiene un proyecto de conocimiento bajo el método Many Brains: un
+  hub como mapa, nodes que son la única fuente de verdad de cada tema, y outputs
+  que citan su fuente. Úsalo cuando el usuario quiera ordenar, estructurar o
+  migrar un proyecto —vacío o ya avanzado—, "aplicar Many Brains", o poner orden
+  en sus archivos, notas o documentos aunque no nombre el sistema; o cuando otro
+  skill necesite estructurar o citar el conocimiento del proyecto.
 ---
 # Many Brains
 
@@ -65,7 +61,7 @@ Ignora siempre el "ruido" (no cuenta como contenido y nunca lo tocas):
 
 Detecta también el **entorno**, porque el handoff final cambia: ¿Cowork o Claude
 Code? Si no estás completamente seguro, **pregúntaselo al usuario** antes del
-handoff. No asumas.
+handoff.
 
 ## Antes de proponer u ordenar — Explica el sistema (siempre)
 
@@ -73,15 +69,14 @@ Antes de proponer una estructura o sembrar, lee `references/tutorial.md` y dale 
 usuario un **resumen breve** (4-6 frases) de cómo funciona Many Brains y con qué
 lógica vas a ordenar su proyecto. Esto importa porque el usuario debe entender el
 criterio *antes* de ver su contenido reorganizado; si no, el orden le parecerá
-arbitrario. No te saltes este paso aunque el usuario tenga prisa.
+arbitrario.
 
 ## Modo Adoptar (el corazón)
 
 Garantía central: **no borras nada y no mueves nada hasta que el usuario apruebe.**
 
 1. **Inventaria.** Lista todos los archivos (recursivo), ignorando el ruido.
-2. **Lee / hojea.** Abre cada archivo lo suficiente para entender su rol. No lo
-   modifiques.
+2. **Lee / hojea.** Abre cada archivo lo suficiente para entender su rol.
 3. **Clasifica (propuesta).** Para cada archivo decide un rol y un destino usando
    las señales de `references/clasificacion.md` (léelo ahora). Esfuérzate por
    ubicar todo dentro de la estructura; clasificar mal es preferible a rendirse (marca "(confianza baja)" tus hipótesis dudosas para que destaquen en el plan),
@@ -103,7 +98,9 @@ Garantía central: **no borras nada y no mueves nada hasta que el usuario aprueb
 6. **Ejecuta (solo con OK).** Mueve los archivos a su destino (mover, no copiar,
    para no dejar duplicados). Crea las carpetas a medida que las necesitas (no
    pre-crees vacías). Crea `_hub.md` a partir de `assets/hub.template.md`
-   y llena sus tablas con lo recién ordenado.
+   y llena sus tablas con lo recién ordenado. Criterio de cierre: cada archivo
+   del plan quedó movido y cada fila del `_hub.md` apunta a un archivo real (sin
+   filas vacías ni archivos sin fila).
 7. **Handoff.** Ve a la sección "Handoff del mantenimiento".
 
 > Mover vs. copiar: como el usuario ve el plan completo antes de que toques nada,
@@ -155,9 +152,8 @@ otros proyectos no tienen).
   Entrégale al usuario el contenido de `assets/instrucciones-para-claude.md` y dile:
   "pega esto en Settings del proyecto → Instructions". Confirma que lo hizo.
 - **En Claude Code:** crea o actualiza el `CLAUDE.md` del proyecto con el contenido
-  de `assets/instrucciones-para-claude.md`.
-
-Si no sabes en qué entorno estás, pregúntalo antes de hacer el handoff.
+  de `assets/instrucciones-para-claude.md`. Confirma que quedó la regla y, si el
+  `CLAUDE.md` ya existía, que la anexaste sin pisar lo anterior.
 
 ## Reglas invariables (lo que el skill promete)
 

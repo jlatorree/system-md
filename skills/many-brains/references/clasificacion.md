@@ -2,9 +2,7 @@
 
 Esta es tu guía para proponer un destino por archivo. Son **señales, no reglas
 rígidas**: usa criterio y, en la duda, propón tu mejor hipótesis y márcala "(confianza baja)" en el plan (el usuario
-corrige el plan antes de que se ejecute). El principio rector: **un archivo es
-*node* si es una fuente de verdad sobre un tema; es *output* si se generó a
-partir de uno o más nodes para presentarlos, entregarlos o resumirlos.**
+corrige el plan antes de que se ejecute).
 
 ## La pregunta clave: ¿fuente o representación?
 
